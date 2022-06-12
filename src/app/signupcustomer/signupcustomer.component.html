@@ -1,0 +1,169 @@
+<div class="container">
+  <div class="card bg-light">
+    <article class="card-body mx-auto" style="max-width: 400px;">
+      <h4 class="card-title mt-3 text-center">Create Account</h4>
+      <p class="text-center">Get started with your free account</p>
+      <div class="alert alert-danger top-error" *ngIf="customerAreadyExits">
+        A user with that email already exits!
+      </div>
+
+      <form #customerForm="ngForm">
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+          </div>
+          <input
+            [(ngModel)]="customerModel.firstName"
+            name="firstName"
+            class="form-control"
+            required
+            #firstNameControl="ngModel"
+            placeholder="First name"
+            type="text"
+          />
+        </div>
+       
+
+        <div
+          class="alert alert-danger"
+          *ngIf="!firstNameControl.valid && firstNameControl.touched"
+        >
+          First name is required
+        </div>
+
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+          </div>
+          <input
+            [(ngModel)]="customerModel.lastName"
+            name="lastName"
+            class="form-control"
+            required
+            #lastNameControl="ngModel"
+            placeholder="Last Name"
+            type="text"
+          />
+        </div>
+       
+
+        <div
+          class="alert alert-danger"
+          *ngIf="!lastNameControl.valid && lastNameControl.touched"
+        >
+          Last name is required
+        </div>
+
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-building"></i> </span>
+          </div>
+          <input
+            [(ngModel)]="customerModel.address"
+            name="address"
+            class="form-control"
+            required
+            #adressControl="ngModel"
+            placeholder="Address"
+            type="text"
+          />
+        </div>
+   
+
+        <div
+          class="alert alert-danger"
+          *ngIf="!adressControl.valid && adressControl.touched"
+        >
+          Address is required
+        </div>
+
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+          </div>
+          <input
+            [(ngModel)]="customerModel.phoneNumber"
+            name="phoneNumber"
+            class="form-control"
+            required
+            #phoneNumberControl="ngModel"
+            placeholder="Phone number"
+            type="text"
+          />
+        </div>
+        
+
+        <div
+          class="alert alert-danger"
+          *ngIf="!phoneNumberControl.valid && phoneNumberControl.touched"
+        >
+          Phone number is required
+        </div>
+
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="fa fa-envelope"></i>
+            </span>
+          </div>
+          <input
+            [(ngModel)]="customerModel.email"
+            name="email"
+            class="form-control"
+            required
+            #emailControl="ngModel"
+            placeholder="Email address"
+            type="email"
+          />
+        </div>
+
+        <div
+          class="alert alert-danger"
+          *ngIf="!emailControl.valid && emailControl.touched"
+        >
+          Email is required
+        </div>
+
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+          </div>
+          <input
+            [(ngModel)]="customerModel.password"
+            name="Password"
+            class="form-control"
+            required
+            #passwordControl="ngModel"
+            placeholder="Create password"
+            type="password"
+          />
+        </div>
+
+        <div
+          class="alert alert-danger"
+          *ngIf="!passwordControl.valid && passwordControl.touched"
+        >
+          Password is required
+        </div>
+
+      
+
+        <div class="form-group">
+          <button
+            (click)="registerNewCustomer()"
+            [disabled]="!customerForm.valid"
+            type="submit"
+            class="btn btn-danger btn-block"
+          >
+            Create Account
+          </button>
+        </div>
+      
+        <p class="text-center">Have an account? <a routerLink="/signIn">Log In</a></p>
+      </form>
+    </article>
+  </div>
+ 
+</div>
+
+

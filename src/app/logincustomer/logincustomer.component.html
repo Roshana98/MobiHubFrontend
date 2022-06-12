@@ -1,0 +1,64 @@
+<div class="container-fluid p-2">
+  <div class="card bg-light">
+    <article class="card-body mx-auto" style="max-width: 400px;">
+      <h4 class="card-title mt-3 text-center">Sign In To Your Account</h4>
+
+      <form  #customerLogInForm="ngForm">
+        <div class="form-group input-group">
+          <div class="alert alert-danger" *ngIf="emailNotValid">
+            {{error_message1}}
+          </div>
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="far fa-envelope"></i>
+            </span>
+          </div>
+          <input 
+            [(ngModel)]="logInCustomerData.email"
+            name="email"
+            class="form-control"
+            placeholder="Email"
+            type="email"
+            required
+            #emailControl="ngModel"
+            />
+        </div>
+        <!-- form-group// -->
+  
+        <div class="form-group input-group">
+          <div class="alert alert-danger password_error" *ngIf="passwordNotValid">
+            {{error_message2}}
+          </div>
+  
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fas fa-key"></i> </span>
+          </div>
+          <input
+            [(ngModel)]="logInCustomerData.password"
+            name="password"
+            class="form-control"
+            required
+            #passwordControl = "ngModel"
+            placeholder="Password"
+            type="password"
+          />
+        </div>
+        <!-- form-group// -->
+        <div class="form-group">
+          <button 
+            type="submit"
+            class="btn btn-danger btn-block"
+            [disabled]="!customerLogInForm.valid"
+            (click)="logInNewUser()"
+          >Sign In
+          </button>
+        </div>
+        <!-- form-group// -->
+      </form>
+    </article>
+  </div>
+  <!-- card.// -->
+</div>
+<!--container end.//-->
+
+

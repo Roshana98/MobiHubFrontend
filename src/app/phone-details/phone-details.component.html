@@ -1,0 +1,317 @@
+<section class="body">
+<!--------Single Product---------->
+<!-- SECTION -->
+<div class="section">
+  <!-- container -->
+  <div class="container">
+      <!-- row -->
+      <div class="row">
+          <!-- Product main img -->
+          <div class="col-md-5 col-md-push-2">
+              <div id="product-main-img">
+                <div class="img-box" style="background: #fff; border-radius: 10px; text-align: center; padding-top: 4.5%; padding-bottom: 3%; justify-content: center;">
+                  <img src="http:{{phone_image }}" 
+                    style="max-width: 180px;" alt="...">
+                </div>
+              </div>
+          </div>
+          <!-- /Product main img -->
+
+          <!-- Product thumb imgs -->
+          <div class="col-md-2  col-md-pull-5">
+              <div id="product-imgs">
+                 
+              </div>
+          </div>
+          <!-- /Product thumb imgs -->
+
+          <!-- Product details -->
+          <div class="col-md-5">
+              <div class="product-details">
+                  <h2 class="product-name">{{phoneName}}</h2>
+                  <div>
+                      <div class="product-rating">
+                          <p><i class="fa fa-star"></i>&nbsp;{{performance_rating}}</p>
+                      </div>
+                      <p class="review-link" >10 Review(s) | Add your review</p>
+                  </div>
+                  <div>
+                      <h5 class="product-price">LKR. {{currentPrice}}</h5>
+                      <span class="product-available">In Stock</span>
+                  </div>
+                  <div>
+                      <h3 class="product-price ">Next Month's Predicted Price<a class="information"><i class="fas fa-info-circle"><span class="tooltiptext">Predicted Price Can Be Change Due to Liquidity..</span></i></a></h3>
+                      <div class="predicted-price">{{predictedPrice}}</div>
+                  </div>
+                  <div class="product-options">
+                      <label>
+                          Size
+                          <select class="input-select">
+                              <option value="0">X</option>
+                          </select>
+                      </label>
+                      <label>
+                          Color
+                          <select class="input-select">
+                              <option value="0">Red</option>
+                          </select>
+                      </label>
+                  </div>
+
+                  <!-- <div class="add-to-cart">
+                      <div class="qty-label">
+                          Qty
+                          <div class="input-number">
+                              <input type="number">
+                              <span class="qty-up">+</span>
+                              <span class="qty-down">-</span>
+                          </div>
+                      </div>
+                      <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+                  </div>
+
+                  <ul class="product-btns">
+                      <li><a href="#"><i class="fa fa-heart-o"></i> add to wishlist</a></li>
+                      <li><a href="#"><i class="fa fa-exchange"></i> add to compare</a></li>
+                  </ul> -->
+
+                  <ul class="product-links">
+                      <li>Category:</li>
+                      <li><a href="#">Headphones</a></li>
+                      <li><a href="#">Accessories</a></li>
+                  </ul>
+
+                  <ul class="product-links">
+                      <li>Share:</li>
+                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                      <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                      <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+                  </ul>
+
+              </div>
+          </div>
+          <!-- /Product details -->
+      </div>
+  </div>
+</div>
+<!--Price change Graph -->
+
+<div class="container" *ngIf="predictionAvailable">
+  <div class="row">
+    <div class="col-sm-8">
+      <h4 class="priceChange">Price History</h4>
+      <h6 class="graphLine">Price </h6>
+  
+      <div class="qd-chart">
+  
+        <google-chart #chart [type]="type" [data]="data" [options]="options" [width]="width" [height]="height">
+  
+        </google-chart>
+      </div>
+  
+    </div>
+    <div class="col-md-4">
+      <h4 class="priceChange">Deals</h4>
+      <div class="list-group">
+        <a href="https://www.chinthanagsm.lk/" class="list-group-item list-group-item-action flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">Chinthana GSM</h5>
+            <img src="assets/img/chinthana.png" class="companylogo">
+          </div>
+          <small>LKR .000000</small>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">Geniues Mobile</h5>
+            <img src="assets/img/gm.jpg" class="companylogo">
+          </div>
+          <small>LKR .000000</small>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">Chinthana GSM</h5>
+            <img src="assets/img/chinthana.png" class="companylogo">
+          </div>
+          <small>LKR .000000</small>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">Chinthana GSM</h5>
+            <img src="assets/img/chinthana.png" class="companylogo">
+          </div>
+          <small>LKR .000000</small>
+        </a>
+      </div>
+      <!--<ul class="lst-deal">
+        <li>
+         <a>
+          <div class="row">
+            <div class="col-md-4">
+              <h5>Price</h5>
+            </div>
+            <div class="col-md-8">
+
+              <h6>sdfsdfisdfusdfisduf</h6>
+            </div>
+          </div>
+         </a>
+        </li>
+
+      </ul>!-->
+    </div>
+  </div>
+  
+</div>
+<!-- /Price change Graph -->
+
+<!--Specs Api-->
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">
+      <h4 class="heading">Specification</h4>
+  <table class="table">
+  
+    <tbody>
+      <tr>
+        <th scope="row" class="data">Available Status</th>
+        <td>{{available_status}}</td>
+
+      </tr>
+      <tr>
+        <th scope="row" class="data">Battery</th>
+        <td >{{battery}}</td>
+
+      </tr>
+      <tr>
+        <th scope="row"  class="data">CPU</th>
+        <td>{{cpu}}</td>
+
+      </tr>
+      <tr>
+        <th scope="row"  class="data">Screen Density</th>
+        <td>{{density}}</td>
+
+      </tr>
+      <tr>
+        <th scope="row"  class="data">Screen Size</th>
+        <td>{{diagonal}}</td>
+
+      </tr>
+      <tr>
+        <th scope="row"  class="data">Front Camera</th>
+        <td>{{front_camera}}</td>
+
+      </tr>
+      <tr>
+        <th scope="row"  class="data">Main Camera</th>
+        <td>{{main_camera}}</td>
+
+      </tr>
+      <tr>
+        <th scope="row"  class="data">OS</th>
+        <td>{{os}}</td>
+
+      </tr>
+      <tr>
+        <th scope="row"  class="data">OS Version</th>
+        <td>{{os_version}}</td>
+
+      </tr>
+      <tr>
+        <th scope="row"  class="data">Processor Model</th>
+        <td>{{processor_model}}</td>
+
+      </tr>
+      <tr>
+        <th scope="row"  class="data">Ram</th>
+        <td>{{ram}}</td>
+
+      </tr>
+      <tr>
+        <th scope="row"  class="data">Screen Resolution</th>
+        <td>{{resolution}}</td>
+
+      </tr>
+      <tr>
+        <th scope="row"  class="data">Screen Type</th>
+        <td>{{screen_type}}</td>
+
+      </tr>
+      <tr>
+        <th scope="row"  class="data">Size</th>
+        <td>{{size}}</td>
+
+      </tr>
+      <tr>
+        <th scope="row"  class="data">Storage</th>
+        <td>{{storage}}</td>
+
+      </tr>
+      <tr>
+        <th scope="row"  class="data">Usable Surface</th>
+        <td>{{usable_surface}}</td>
+
+      </tr>
+      <tr>
+        <th scope="row"  class="data">Phone Weight</th>
+        <td>{{weight}}</td>
+
+      </tr>
+      <tr>
+        <th scope="row"  class="data">Aspect Ratio</th>
+        <td>{{aspect_ratio}}</td>
+
+      </tr>
+    </tbody>
+  </table>
+    </div>
+    <div class="col-md-3">
+     
+      <ul class="lst-f">
+        <li>
+          <i class="fa fa-battery"></i>
+          <h5>Battery Rating</h5>
+          <p>{{battery_rating}}/10</p>
+        </li>
+        <li>
+          <i class="fa fa-camera"></i>
+          <h5>Camera Rating</h5>
+          <p>{{camera_rating}}/10</p>
+        </li>
+        <li>
+          <i class="fa fa-wifi"></i>
+          <h5>Connectivity Rating</h5>
+          <p>{{connectivity_rating}}/10</p>
+        </li>
+        <li>
+          <i class="fa fa-mobile"></i>
+          <h5>Performance Rating</h5>
+          <p>{{performance_rating}}/10</p>
+        </li>
+        <li>
+          <i class="fas fa-ruler-combined"></i>
+          <h5>Design Rating</h5>
+          <p>{{design_rating}}/10</p>
+        </li>
+        <li>
+          <i class="fa fa-user"></i>
+          <h5>User Rating</h5>
+          <p>{{user_rating}}/10</p>
+        </li>
+      
+      </ul>
+    </div>
+  </div>
+  
+</div>
+<!--/Specs Api-->
+
+<!--Similar Products-->
+
+
+
+
+<!--/Latest Priducts-->
+
+</section>

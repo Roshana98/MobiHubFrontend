@@ -1,0 +1,94 @@
+/* CSS */
+/* import fonts from google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Gugi&family=Lato&family=Roboto&family=Sofia&display=swap');
+
+:root{
+    --light-gray: #2b3032a1;
+    --primary-color: #0e76a8;
+    --border:#2b303218;
+    --text-color:#ff686b;
+    --roboto:"Roboto",sans-serif;
+    --gugi:"Gugi",cursive;
+    --sofia:"Sofia",cursive;
+    --anton:"Anton",sans-serif;
+}
+
+.primary-color{
+    color:var(--primary-color);
+}
+
+.bg-primary-color{
+    background-color:var(--primary-color)!important;
+}
+
+.text-color{
+    color:var(--text-color);
+}
+
+.font-roboto{
+    font-family: var(--roboto);
+}
+
+.lightblue{
+    color: lightblue;
+}
+
+/** Main */
+
+.overlay .fas{
+    cursor: pointer;
+    background-color: #fff;
+    color:#000;
+    height: 35px;
+    width: 60px;
+    font-size: 20px;
+    padding: 7px;
+    margin: 5%;
+    margin-bottom: 5%;
+}
+
+.overlay .btn-info
+{
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.overlay .fas:hover{
+    background-color: lightblue;
+}
+
+h2{
+    font-family: var(--gugi);
+}
+
+h3{
+    font-family: var(--gugi);
+}
+
+h4{
+    font-family: var(--gugi);
+}
+
+p{
+    font-family: var(--roboto);
+}
+
+.alert{
+    margin-bottom: -1px;
+    height: 30px;
+    width: 540px;
+    color: #CD5C5C;
+    padding-top: 0;
+}
+
+.top-error{
+    margin-bottom: -1px;
+}
+
+.submit{
+    margin-top: 50px;
+}
+.password_error{
+    height: 50px;
+}

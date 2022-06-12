@@ -1,0 +1,72 @@
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+      <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+  
+      <!-- Main Content -->
+      <div id="content">
+  
+  
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+  
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">My Account</h1>
+          </div>
+  
+          
+          <a routerLinkActive="active" routerLink="/create-mobile" class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm"><i class="fas fa-plus"></i> &nbsp;Add New Smartphone</a>
+          
+          <!-- Page Heading -->
+          <div class="container-fluid p-3">
+            <h1 class="h3 mb-2 text-gray-800">Currently Added Smartphones</h1>
+            <p class="mb-4">Below tabel shows all the smartphones You added as a Seller, into mobihub web application.</p>
+          </div>
+  
+          <div class="container">
+            <!-- No data message -->
+            <p *ngIf="Mobile.length <= 0" class="no-data text-center">There is no Mobile phones added yet!</p>
+            
+             <!--Tabel-->
+             <div class="container-fluid p-2">
+              <table class="table">
+                <thead class="thead-light">
+                <tr>
+                  <th scope="col">Mobile ID</th>
+                  <th scope="col">Brand</th>
+                  <th scope="col">Model</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">Date</th>
+                  <th scope="col center">Update</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let mobile of Mobile; let i = index">
+                  <th scope="row">{{mobile._id}}</th>
+                  <td>{{mobile.brand}}</td>
+                  <td>{{mobile.model}}</td>
+                  <td>{{mobile.price}}</td>
+                  <td>{{mobile.date}}</td>
+                  <td class="text-center edit-block">
+                    <span class="edit" [routerLink]="['/edit-mobile/', mobile._id]">
+                      <button type="button" class="btn btn-success btn-sm">Edit</button>
+                    </span>
+                    <span class="delete" (click)="removeMobile(mobile, i)">
+                      <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+  
+          
+        </div>
+        <!-- /.container-fluid -->
+  
+      </div>
+      <!-- End of Main Content -->
+ 

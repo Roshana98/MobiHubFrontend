@@ -1,0 +1,85 @@
+<!-- HEADER -->
+<header>
+    <!-- TOP HEADER -->
+    <div id="top-header">
+        <div class="container">
+            <ul class="header-links pull-left">
+                <li><a routerLink="/home"><i class="fa fa-envelope-o"></i> mobihub.tech@gmail.com</a></li>
+            </ul>
+            <ul class="header-links pull-right">
+                <li><a routerLink="/customer_signUp" *ngIf="!authService.isLoggedIn()"><i class="fa fa-user-o"></i> Create An Account</a></li>
+                <li><a routerLink="/signIn" *ngIf="!authService.isLoggedIn()"><i class="fas fa-sign-in-alt"></i> Customer Login</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- /TOP HEADER -->
+
+    <!-- MAIN HEADER -->
+    <div id="header">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <!-- LOGO -->
+                <div class="col-md-3">
+                    <div class="header-logo">
+                        <a href="#" class="logo">
+                            <img src="assets/img/logo.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <!-- /LOGO -->
+
+                <!-- ACCOUNT -->
+                <div class="col-md-3 clearfix">
+                    <div class="header-ctn">
+                        
+
+                    </div>
+                </div>
+                <!-- /ACCOUNT -->
+            </div>
+            <!-- row -->
+        </div>
+        <!-- container -->
+    </div>
+    <!-- /MAIN HEADER -->
+</header>
+<!-- /HEADER -->
+
+<!-- NAVIGATION -->
+<nav class="navbar navbar-expand-lg navbar-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/features">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="authService.getCustomerId()" *ngIf="authService.isCustomerLoggedIn()">Store</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/about">About</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"  *ngIf="!authService.isCustomerLoggedIn()" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Seller Portal
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" routerLink="/signIn" *ngIf="!authService.isSellerLoggedIn()">Seller Login</a>
+              <a class="dropdown-item" routerLink="/seller_signUp" *ngIf="!authService.isSellerLoggedIn()">Seller Register</a>
+              <a class="dropdown-item" (click)="authService.getSellerId()" *ngIf="authService.isSellerLoggedIn()">Account Manager</a>
+            </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/signIn" style="cursor:pointer" *ngIf="authService.isLoggedIn()" (click)="authService.logOut()">Log out</a>
+        </li>
+      </ul>
+    </div>
+</nav>    
+<!-- /NAVIGATION -->

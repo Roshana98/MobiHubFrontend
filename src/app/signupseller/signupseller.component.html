@@ -1,0 +1,193 @@
+<div class="container">
+  <div class="card bg-light">
+    <article class="card-body mx-auto" style="max-width: 400px;">
+      <h4 class="card-title mt-3 text-center">Create Account</h4>
+      <p class="text-center">Get started with your free account</p>
+      <div class="alert alert-danger top-error" *ngIf="sellerAreadyExits">
+        A user with that email already exits!
+      </div>
+
+      <form #sellerForm="ngForm">
+        <!-- form-group// -->
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+          </div>
+          <input
+            name="seller_id"
+            class="form-control"
+            placeholder="Id"
+            type="text"
+            [(ngModel)]="sellerModel.seller_id"
+            required
+            #sellerIdControl="ngModel"
+          />
+        </div>
+    
+        <div
+          class="alert alert-danger"
+          *ngIf="!sellerIdControl.valid && sellerIdControl.touched"
+        >
+          Id is required
+        </div>
+    
+        <!-- form-group// -->
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+          </div>
+          <input
+            name="shopName"
+            class="form-control"
+            placeholder="Shop name"
+            type="text"
+            [(ngModel)]="sellerModel.shopName"
+            required
+            #shopNameControl="ngModel"
+          />
+        </div>
+
+        <div
+          class="alert alert-danger"
+          *ngIf="!shopNameControl.valid && shopNameControl.touched"
+        >
+          Shop name is required
+        </div>
+
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="fa fa-building"></i>
+            </span>
+          </div>
+          <input
+            type="text"
+            class="form-control"
+            name="shopAddress"
+            [(ngModel)]="sellerModel.shopAddress"
+            placeholder="Address"
+            required
+            #shopAddressControl="ngModel"
+          />
+        </div>
+
+        <div
+          class="alert alert-danger"
+          *ngIf="!shopAddressControl.valid && shopAddressControl.touched"
+        >
+          Shop address is required
+        </div>
+
+        <!-- form-group// -->
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+          </div>
+          <input
+            name="phoneNumber"
+            [(ngModel)]="sellerModel.phoneNumber"
+            class="form-control"
+            placeholder="Phone number"
+            type="text"
+            required
+            #phoneNumberControl="ngModel"
+          />
+        </div>
+
+        <div
+          class="alert alert-danger"
+          *ngIf="!phoneNumberControl.valid && phoneNumberControl.touched"
+        >
+          Phone number is required
+        </div>
+
+        <!--Address End-->
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="fa fa-envelope"></i>
+            </span>
+          </div>
+          <input
+            name="email"
+            [(ngModel)]="sellerModel.email"
+            class="form-control"
+            placeholder="Email address"
+            type="email"
+            required
+            #emailControl="ngModel"
+          />
+        </div>
+
+        <div
+          class="alert alert-danger"
+          *ngIf="!emailControl.valid && emailControl.touched"
+        >
+          Email address is required
+        </div>
+
+        <!-- form-group// -->
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+          </div>
+          <input
+            class="form-control"
+            name="password"
+            [(ngModel)]="sellerModel.password"
+            placeholder="Password"
+            type="password"
+            required
+            #passwordControl="ngModel"
+          />
+        </div>
+
+        <div
+          class="alert alert-danger"
+          *ngIf="!passwordControl.valid && passwordControl.touched"
+        >
+          Password is required
+        </div>
+
+        <!-- form-group// -->
+        <!-- <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+          </div>
+          <input
+            class="form-control"
+            ngModel
+            placeholder="Confirm password"
+            [ngModelOptions]="{standalone: true}"
+            type="password"
+            required
+            #confirmPasswordControl="ngModel"
+          />
+        </div>
+
+        <div
+        class="alert alert-danger"
+        *ngIf="!confirmPasswordControl.valid && confirmPasswordControl.touched"
+      >
+        Confirm your password
+      </div> -->
+
+        <!-- form-group// -->
+        <div class="form-group">
+          <button
+            type="submit"
+            class="btn btn-danger btn-block"
+            (click)="registerNewSeller()"
+            [disabled]="!sellerForm.valid"
+          >
+            Create Account
+          </button>
+        </div>
+        <!-- form-group// -->
+        <p class="text-center">Have an account? <a routerLink="/signIn">Log In</a></p>
+      </form>
+    </article>
+  </div>
+  <!-- card.// -->
+</div>
+<!--container end.//-->

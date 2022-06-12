@@ -1,0 +1,71 @@
+/* CSS */
+/* import fonts from google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Gugi&family=Lato&family=Roboto&family=Sofia&display=swap');
+
+:root{
+    --light-gray: #2b3032a1;
+    --primary-color: #0e76a8;
+    --border:#2b303218;
+    --text-color:#ff686b;
+    --roboto:"Roboto",sans-serif;
+    --gugi:"Gugi",cursive;
+    --sofia:"Sofia",cursive;
+    --anton:"Anton",sans-serif;
+}
+
+.primary-color{
+    color:var(--primary-color);
+}
+
+.bg-primary-color{
+    background-color:var(--primary-color)!important;
+}
+
+.text-color{
+    color:var(--text-color);
+}
+
+.font-roboto{
+    font-family: var(--roboto);
+}
+
+.lightblue{
+    color: lightblue;
+}
+
+/* Navigation */
+
+.navbar-nav{
+    padding: 0.8em 0em;
+}
+
+.navbar-nav .nav-link{
+    font-size: 0.9em;
+    color:var(--light-gray);
+}
+
+.navbar-nav .nav-item .nav-link{
+    padding: 0 1.3em;
+}
+
+.navbar-nav .basket-icon{
+    margin-right: 6.5em !important;
+}
+
+.navbar-nav .nav-item .nav-link:hover{
+    color:lightskyblue;
+}
+
+h1{
+    font-family: var(--gugi);
+    color: white;
+    margin-top: 26px;
+    font-size: 32px;
+}
+
+h5{
+    font-family: var(--roboto);
+    font-size: 25px;
+}
+
+  

@@ -1,0 +1,195 @@
+  <!--Search Bar-->
+  <div class="container-fluid searchbar">
+    <div class="row">
+      
+      <div class="container ">
+          <form class="form my-2 my-lg-0">
+            <mat-form-field class="search">
+              <input
+                class="form-control mr-sm-2 "
+                name="search_result"
+                type="text"
+                [(ngModel)]="userSearches.search_result"
+                aria-label="Search"
+                matInput
+                [matAutocomplete]="auto"
+                [formControl]="myControl"
+              />
+              
+              <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFunction">
+                
+                <mat-option
+                  *ngFor="let option of filteredOptions | async"
+                  [value]="option"
+                >
+                
+                  <span>{{ option }}</span>
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+            <button
+              class="btn "
+              
+              type="submit"
+              (click)="addSearchResult()"
+            >
+              Search
+            </button>
+          </form>
+        
+      </div>
+    </div>
+  </div>
+  <!--/Search Bar-->
+
+
+
+
+<!--Recommended phone-->
+<div class="container">
+  <div class="budget" *ngIf="hasSearched">
+    <h4>Our Recommendations</h4>
+    <div class="row">
+      <div class="col-md-3" *ngFor="let phone of recommended_phones" >
+        <div class="overlay">
+          <button type="button" class="btn btn-info" title="View Only" width="189px" (click)="onSelect(phone)">
+            <i class="fas fa-eye"></i>
+          </button>
+        </div>
+        <div class="product-top">
+          <img class="phone_img" src="http:{{ phone.phone_image }}" />
+        </div>
+        <div class="product-bottom text-center">
+          <i class="fa fa-star"></i>{{ phone.average_rating }}/10
+          <h5>{{ phone.phone_name }}</h5>
+          <h3>Rs.{{ phone.phone_price }}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--/Recommended phone-->
+<!--dropdown menu-->
+<div class="select-box">
+
+  <h4 >Choose Price Range:</h4>
+  
+    
+  <select class="browser-default custom-select"  [(ngModel)]="selectedLevel" (change)="selected()">
+    <option *ngFor="let item of data" [ngValue]="item" >{{ item.name }}</option>
+  </select>
+ 
+  
+</div>
+
+ 
+
+<!--/dropdown Menu-->
+<!--Latest Products-->
+<div class="container">
+  <div class="budget" *ngIf="isVisible1">
+    <h4>Budget Phones</h4>
+    <div class="row">
+      <div class="col-md-3" *ngFor="let phone of lower_range_phones">
+        <div class="overlay">
+          <button type="button" class="btn btn-info" title="View Only" width="189px" (click)="onSelect(phone)">
+            <i class="fas fa-eye"></i>
+          </button>
+        </div>
+        <div class="product-top">
+          <img class="phone_img" src="http:{{ phone.phone_image }}" />
+        </div>
+        <div class="product-bottom text-center">
+          <i class="fa fa-star"></i>{{ phone.average_rating }}/10
+          <h5>{{ phone.phone_name }}</h5>
+          <h3>Rs.{{ phone.phone_price }}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="semi" *ngIf="isVisible2">
+    <h4>Semi Mid Range Phones</h4>
+    <div class="row">
+      <div class="col-md-3" *ngFor="let phone of semi_medium_range_phones">
+        <div class="overlay">
+          <button type="button" class="btn btn-info" title="View Only" width="189px" (click)="onSelect(phone)">
+            <i class="fas fa-eye"></i>
+          </button>
+        </div>
+        <div class="product-top">
+          <img class="phone_img" src="http:{{ phone.phone_image }}" />
+        </div>
+        <div class="product-bottom text-center">
+          <i class="fa fa-star"></i>{{ phone.average_rating }}/10
+          <h5>{{ phone.phone_name }}</h5>
+          <h3>Rs.{{ phone.phone_price }}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mid" *ngIf="isVisible3">
+    <h4>Mid Range Phones</h4>
+    <div class="row">
+      <div class="col-md-3" *ngFor="let phone of medium_range_phones">
+        <div class="overlay">
+          <button type="button" class="btn btn-info" title="View Only" width="189px" (click)="onSelect(phone)">
+            <i class="fas fa-eye"></i>
+          </button>
+        </div>
+        <div class="product-top">
+          <img class="phone_img" src="http:{{ phone.phone_image }}" />
+        </div>
+        <div class="product-bottom text-center">
+          <i class="fa fa-star"></i>{{ phone.average_rating }}/10
+          <h5>{{ phone.phone_name }}</h5>
+          <h3>Rs.{{ phone.phone_price }}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="semiHigh" *ngIf="isVisible4">
+    <h4>Semi High Range Phones</h4>
+    <div class="row">
+      <div class="col-md-3" *ngFor="let phone of semi_high_range_phones">
+        <div class="overlay">
+          <button type="button" class="btn btn-info" title="View Only" width="189px" (click)="onSelect(phone)">
+            <i class="fas fa-eye"></i>
+          </button>
+        </div>
+        <div class="product-top">
+          <img class="phone_img" src="http:{{ phone.phone_image }}" />
+        </div>
+        <div class="product-bottom text-center">
+          <i class="fa fa-star"></i>{{ phone.average_rating }}/10
+          <h5>{{ phone.phone_name }}</h5>
+          <h3>Rs.{{ phone.phone_price }}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="high" *ngIf="isVisible5">
+    <h4>High Range Phones</h4>
+    <div class="row">
+      <div class="col-md-3" *ngFor="let phone of high_range_phones">
+        <div class="overlay">
+          <button type="button" class="btn btn-info" title="View Only" width="189px" (click)="onSelect(phone)">
+            <i class="fas fa-eye"></i>
+          </button>
+        </div>
+        <div class="product-top">
+          <img class="phone_img" src="http:{{ phone.phone_image }}" />
+        </div>
+        <div class="product-bottom text-center">
+          <i class="fa fa-star"></i>{{ phone.average_rating }}/10
+          <h5>{{ phone.phone_name }}</h5>
+          <h3>Rs.{{ phone.phone_price }}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

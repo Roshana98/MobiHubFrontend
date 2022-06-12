@@ -1,0 +1,263 @@
+/* CSS */
+/* import fonts from google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Gugi&family=Lato&family=Roboto&family=Sofia&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+:root{
+    --light-gray: #2b3032a1;
+    --primary-color: #0e76a8;
+    --border:#2b303218;
+    --text-color:#ff686b;
+    --roboto:"Roboto",sans-serif;
+    --gugi:"Gugi",cursive;
+    --sofia:"Sofia",cursive;
+    --anton:"Anton",sans-serif;
+}
+
+.primary-color{
+    color:var(--primary-color);
+}
+
+.bg-primary-color{
+    background-color:var(--primary-color)!important;
+}
+
+.text-color{
+    color:var(--text-color);
+}
+
+.font-roboto{
+    font-family: var(--roboto);
+}
+
+.lightblue{
+    color: lightblue;
+}
+
+/** Main */
+
+
+.slider{
+    background: rgb(233, 233, 233); ;
+}
+
+.searchbar{
+   /* background: rgb(233, 233, 233);*/
+   background: #000;
+   padding: 1.6% 0;
+   margin-bottom: 2%;
+}
+.searchbar input[type=text]{
+    border: 1px solid #fff;
+    border-radius: 20px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    // margin-top: -26px;
+ }
+ .btn{
+    color: #fff;
+    background-color: #A51818 !important;
+    border-color: #fff;
+    border-radius: 10px;
+    text-transform: uppercase;
+    line-height: 5px;
+    padding: 15px 12px;
+    margin-left: 9px;
+    margin-top: 14px;
+    float: right;
+    height: 40px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+ }
+
+.bar{
+    padding-left: 400px ;
+    margin-left: 500px;
+}
+
+
+.container h4{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
+    background-color: #A51818;
+    color:white;
+    width: 250px;
+    font-size: 18px;
+    padding: 8px;
+    height: 40px;
+}
+
+
+/*.row{
+    margin-top: 30px;
+}*/
+
+.main_img{
+    width:100%;
+}
+
+.phone_img{
+    height: 150px;
+    width: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.product-top{
+  width: 100%;
+    
+}
+.top_Rated_Phones .col-md-3{
+    margin-bottom: 10%;
+    margin-top: 1%;
+}
+.product-bottom{
+    margin-top: 10px;
+}
+.product-bottom .fa
+{
+    color: orange;
+    margin-right: 8px;
+    font-size: 15px;
+}
+
+.product-bottom h5{
+    font-family: var(--roboto);
+    font-size: 20px;
+}
+
+.product-bottom h3{
+    font-family: var(--roboto);
+    font-size: 15px;
+    padding-bottom: 5px;
+}
+
+.overlay{
+    display: block;
+    opacity: 0;
+    position: absolute;
+    top: 10%;
+    margin-left: 0;
+    width:70px;
+}
+
+.col-md-3:hover .overlay{
+    opacity: 1;
+    margin-left: 5%;
+    transition: 0.5s;
+}
+
+.overlay .fas{
+    cursor: pointer;
+    background-color: #fff;
+    color:#000;
+    height: 35px;
+    width: 35px;
+    font-size: 20px;
+    padding: 7px;
+    margin: 5%;
+    margin-bottom: 5%;
+}
+
+.overlay .btn-info
+{
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.overlay .fas:hover{
+    background-color: lightblue;
+}
+
+.dropdown{
+    width: 500px;
+    padding-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+
+}
+
+.mat-form-field {
+    width: 90%;
+}
+.border-2{
+    border: 1px solid #000;
+}
+
+.mat-form-field-underline {
+    height: 0!important;
+    display: none!important;
+   }
+
+
+
+
+/*media queries*/
+ 
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {  
+    .mat-form-field{
+        width: 100%;
+        margin-bottom: -27px;
+
+    }
+    .my-2 .btn-outline-info{
+        color: #fff;
+    border-color: #fff;
+    border-radius: 0;
+    text-transform: uppercase;
+    line-height: 0;
+    padding: 15px 12px;
+    /* margin-left: 8px; */
+    width: 100%;
+    margin: 0;
+    }
+    .mat-form-field-wrapper{
+        padding-bottom: 0!important;
+    }
+   
+}
+ 
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (max-width: 768px) { 
+    .mat-form-field{
+        width: 100%;
+        margin-bottom: -27px;
+    }
+    .my-2 .btn-outline-info{
+        color: #fff;
+    border-color: #fff;
+    border-radius: 0;
+    text-transform: uppercase;
+    line-height: 0;
+    padding: 15px 12px;
+    /* margin-left: 8px; */
+    width: 100%;
+    margin: 0;
+    
+    }
+    .mat-form-field-wrapper{
+        padding-bottom: 0!important;
+    }
+ 
+}
+ 
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+ 
+}
+ 
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  
+    
+}
